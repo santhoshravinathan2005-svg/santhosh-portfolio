@@ -1,0 +1,142 @@
+/* HERO SECTION CONTAINER */
+.hero-section {
+  display: flex;
+  justify-content: space-between; /* Pushes Left, Center, Right apart */
+  align-items: center; /* Centers everything vertically */
+  width: 100%;
+  height: 90vh; /* Leaves space for your navbar */
+  background-color: #050510; /* Your dark background */
+  padding: 0 50px; /* Add some space on the sides */
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+/* --- LEFT SIDE TEXT --- */
+.hero-left {
+  flex: 1; /* Takes up left space */
+  text-align: left;
+  z-index: 2;
+}
+
+.greeting {
+  color: #8a8fa8;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.name {
+  color: #ffffff;
+  font-size: 60px; /* Big, Bold name */
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* --- CENTER IMAGE & GLOW --- */
+.hero-center {
+  .hero-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    min-width: 0;
+}
+
+/* THE PURPLE GLOW EFFECT */
+.glow-effect {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 520px;
+    height: 700px;
+
+    background: radial-gradient(
+        ellipse,
+        rgba(138, 43, 226, 0.55) 0%,
+        rgba(108, 45, 190, 0.30) 35%,
+        rgba(0, 0, 0, 0) 72%
+    );
+
+    filter: blur(25px);
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-person {
+    position: relative;
+
+    height: 85%;
+    width: auto;
+
+    max-width: none;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+    transform: scale(1.40);
+    transform-origin: center bottom;
+
+    z-index: 1;
+
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+
+    display: block;
+}
+
+/* --- RIGHT SIDE TEXT --- */
+.hero-right {
+  flex: 1; /* Takes up right space */
+  text-align: right; /* Pushes text to the right edge */
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.role {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700; /* Bold */
+  margin: 0;
+  line-height: 1.2;
+}
+
+.role.highlight {
+  color: #a78bfa; /* Purple color for the word "learner" */
+}
+
+/* --- RESPONSIVE FOR MOBILE (Optional but recommended) --- */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    height: auto;
+    padding: 50px 20px;
+    gap: 30px;
+  }
+  .hero-left, .hero-center, .hero-right {
+    text-align: center;
+    flex: none;
+    width: 100%;
+    align-items: center;
+  }
+  .hero-right {
+    text-align: center;
+  }
+  .name {
+    font-size: 40px;
+  }
+  .role {
+    font-size: 22px;
+  }
+  .hero-person {
+    height: 50vh;
+  }
