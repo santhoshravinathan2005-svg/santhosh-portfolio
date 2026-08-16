@@ -21,6 +21,37 @@
  
 html { scroll-behavior: smooth; }
  
+body.no-scroll { overflow: hidden; }
+ 
+/* ==========================================================================
+   PRELOADER
+   ========================================================================== */
+ 
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.65s ease, visibility 0.65s ease;
+}
+ 
+#preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+ 
+#preloader-text {
+  font-family: var(--sans);
+  font-size: clamp(2.2rem, 8vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+ 
 body {
   background: var(--bg);
   color: var(--text);
