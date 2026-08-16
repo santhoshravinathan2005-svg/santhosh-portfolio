@@ -78,12 +78,6 @@ a { color: inherit; text-decoration: none; }
  
 /* Faint ambient grid, evokes a data/graph backdrop without being loud */
 body {
-  background-image:
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 64px 64px;
-  background-position: center top;
-  background-attachment: fixed;
   background-color: var(--bg);
   position: relative;
 }
