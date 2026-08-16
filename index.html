@@ -4,6 +4,18 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Santhosh Ravinathan · AI/ML Portfolio</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+ 
+<meta name="description" content="CSE (AI &amp; ML) student. Explore my projects, skills, and experience in artificial intelligence and machine learning." />
+<meta property="og:title" content="Santhosh Ravinathan | AI/ML Portfolio" />
+<meta property="og:description" content="CSE (AI &amp; ML) student. Explore my projects, skills, and experience in artificial intelligence and machine learning." />
+<meta property="og:image" content="https://santhosh-portfolio-tau-three.vercel.app/images/profile.png" />
+<meta property="og:url" content="https://santhosh-portfolio-tau-three.vercel.app/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Santhosh Ravinathan | AI/ML Portfolio" />
+<meta name="twitter:description" content="CSE (AI &amp; ML) student. Explore my projects, skills, and experience in artificial intelligence and machine learning." />
+<meta name="twitter:image" content="https://santhosh-portfolio-tau-three.vercel.app/images/profile.png" />
  
 <!-- Google Font & Font Awesome -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -57,7 +69,7 @@
   </div>
  
   <div class="hero-right">
-    <div class="hero-role">AIML Student</div>
+    <div class="hero-role" id="hero-role">AIML Student</div>
     <div class="hero-divider"></div>
     <p class="hero-desc">Understanding AI<br>&amp; Learner</p>
   </div>
@@ -210,6 +222,39 @@
       setTimeout(function () { preloader.remove(); }, 700);
     }, 2000);
   });
+})();
+</script>
+ 
+<!-- Typing animation for the hero role -->
+<script>
+(function () {
+  var roles = ["AIML Student", "AI Learner", "Python Developer", "ML Enthusiast"];
+  var el = document.getElementById('hero-role');
+  if (!el) return;
+  var roleIndex = 0, charIndex = 0, deleting = false;
+ 
+  function tick() {
+    var current = roles[roleIndex];
+    if (!deleting) {
+      charIndex++;
+      el.textContent = current.slice(0, charIndex);
+      if (charIndex === current.length) {
+        deleting = true;
+        setTimeout(tick, 1400);
+        return;
+      }
+    } else {
+      charIndex--;
+      el.textContent = current.slice(0, charIndex);
+      if (charIndex === 0) {
+        deleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+      }
+    }
+    setTimeout(tick, deleting ? 40 : 80);
+  }
+ 
+  setTimeout(tick, 2600);
 })();
 </script>
  
